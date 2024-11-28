@@ -1,0 +1,19 @@
+# compiled output
+.vscode
+
+# github
+.github/
+
+# target
+target
+
+# docker
+Dockerfile
+.dockerignore
+docker-compose.yaml
+
+# git
+.git
+.gitignore
+.env
+.env.sample

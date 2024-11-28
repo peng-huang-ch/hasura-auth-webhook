@@ -1,0 +1,9 @@
+services:
+  engine:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 13050:3050
+    env_file:
+      - .env
