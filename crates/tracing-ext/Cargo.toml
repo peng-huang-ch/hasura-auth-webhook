@@ -8,9 +8,10 @@ license.workspace = true
 [dependencies]
 axum = { workspace = true }
 axum-core = { workspace = true }
-
+axum-extra = { workspace = true }
 derive_more = { workspace = true }
 http = { workspace = true }
+
 # opentelemetry
 opentelemetry = { workspace = true }
 opentelemetry-contrib = { workspace = true }

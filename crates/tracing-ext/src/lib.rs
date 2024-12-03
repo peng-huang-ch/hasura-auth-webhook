@@ -1,15 +1,15 @@
 mod graphql;
 mod http;
+mod otlp;
 mod request;
-mod setup;
 mod traceable;
 mod tracer;
 
 // Avoid conflicts with `http` crate
 pub use crate::http::TraceableHttpResponse;
 pub use graphql::graphql_request_tracing_middleware;
+pub use otlp::{init_tracing, shutdown_tracer, ExportTracesStdout, PropagateBaggage};
 pub use request::get_trace_headers;
-pub use setup::{init_tracing, shutdown_tracer, ExportTracesStdout, PropagateBaggage};
 pub use traceable::{ErrorVisibility, Successful, Traceable, TraceableError};
 pub use tracer::{
     add_event_on_active_span, global_tracer, run_with_baggage, set_attribute_on_active_span,

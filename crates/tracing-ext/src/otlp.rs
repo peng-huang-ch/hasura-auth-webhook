@@ -215,8 +215,6 @@ pub fn init_tracer_provider(
         KeyValue::new(semcov::resource::SERVICE_NAME, service_name),
         KeyValue::new(semcov::resource::SERVICE_VERSION, service_version),
     ];
-    let config = opentelemetry_sdk::trace::Config::default()
-        .with_resource(opentelemetry_sdk::Resource::new(resource_entries));
 
     let otlp_exporter_builder = opentelemetry_otlp::SpanExporter::builder()
         .with_tonic()
@@ -225,9 +223,9 @@ pub fn init_tracer_provider(
     let otlp_exporter = otlp_exporter_builder.build()?;
 
     let mut tracer_provider = TracerProvider::builder()
+        .with_resource(opentelemetry_sdk::Resource::new(resource_entries))
         .with_batch_exporter(otlp_exporter, opentelemetry_sdk::runtime::Tokio)
-        .with_span_processor(BaggageSpanProcessor())
-        .with_config(config);
+        .with_span_processor(BaggageSpanProcessor());
 
     if let ExportTracesStdout::Enable = enable_stdout_export {
         let stdout_exporter = opentelemetry_stdout::SpanExporter::default();

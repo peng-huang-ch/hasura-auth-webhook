@@ -7,9 +7,8 @@ use opentelemetry::global::{self, BoxedTracer};
 use opentelemetry::trace::{
     get_active_span, FutureExt, Span, SpanContext, SpanRef, TraceContextExt, Tracer as OtelTracer,
 };
-use opentelemetry::{Context, Key, KeyValue};
+use opentelemetry::{Context, Key};
 use opentelemetry_http::HeaderExtractor;
-use opentelemetry_semantic_conventions::resource::{SERVICE_NAME, SERVICE_VERSION};
 
 use crate::traceable::{ErrorVisibility, Traceable, TraceableError};
 pub static GLOBAL_TRACER_NAME: &str = "tracing-ext";
