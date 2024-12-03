@@ -6,8 +6,8 @@ edition = "2021"
 
 [dependencies]
 # built-in
-axum-ext = { path = "../axum-ext" }
-tracing-ext = { path = "../tracing-ext" }
+axum-ext = { workspace = true }
+tracing-ext = { workspace = true }
 
 anyhow = { workspace = true }
 chrono = { workspace = true }

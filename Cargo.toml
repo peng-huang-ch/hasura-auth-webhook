@@ -18,6 +18,11 @@ rust-version = "1.79"
 license = "MIT OR Apache-2.0"
 
 [workspace.dependencies]
+# builtin
+auth-webhook = { path = "crates/auth-webhook" }
+tracing-ext = { path = "crates/tracing-ext" }
+axum-ext = { path = "crates/axum-ext" }
+
 anyhow = "1.0.93"
 chrono = "0.4.38"
 clap = { version = "4.5.21", features = ["derive", "cargo", "env"] }

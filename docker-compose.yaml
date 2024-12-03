@@ -1,7 +1,7 @@
 services:
-  engine:
+  auth-webhook:
     build:
-      dockerfile: Dockerfile
+      dockerfile: auth-webhook.Dockerfile
       context: .
     ports:
       - 13050:3050
